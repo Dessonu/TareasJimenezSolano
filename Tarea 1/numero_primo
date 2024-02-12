@@ -5,19 +5,18 @@
 def invert_case(string):
     finalstring=""
     if type(string)==str:
-        if string.isalpha():
-            if not(string.isspace()):
-                for i in string:
-                    if i.isupper():
-                        finalstring=finalstring+i.lower()
-                    else:
-                        finalstring=finalstring+i.upper()         
-                print(finalstring)
+        if string.isalpha() or string=="":
+            if string != "":
+                if not(string.isspace()):
+                    for i in string:
+                        if i.isupper():
+                            finalstring=finalstring+i.lower()
+                        else:
+                            finalstring=finalstring+i.upper()         
+                    return 0,finalstring
             else:
-                return 
+                return -48,None
         else:
-            return 
+            return -32,None
     else:
-        return 
-    
-invert_case("P")
+        return -16,None
