@@ -22,30 +22,3 @@ def invert_case(string):
     
 invert_case("P")
 
-# La función crea dos listas en una se colocan todos los números entre
-# el número "base" y el número 2, por otro lado se crea una lista en la
-# que se va colocando los números múltiplos de numeros anteriores, luego
-# los números que se repitan en las listas se eliminan dejando únicamente
-# los números primos
-
-def numero_primo(base):
-    primos = []
-    no_primos = []
-    if not isinstance(base, int):
-        return -64, None
-    if isinstance(base, bool):
-        return -64, None
-    if base > 100:
-        return -80, None
-    for i in range(base, 1, -1):
-        primos.append(i)
-    primos.reverse()
-    for n in primos:
-        if n * n <= base:
-            for i in range(1, base + 1):
-                if i % n == 0 and i != n:
-                    no_primos.append(i)
-    for i in no_primos:
-        if i in primos:
-            primos.remove(i)
-    return 0, primos
