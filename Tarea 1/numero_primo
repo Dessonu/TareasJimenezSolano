@@ -20,3 +20,5 @@ def invert_case(string):
             return -32,None
     else:
         return -16,None
+        
+    invert_case("P")
